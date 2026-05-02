@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Рестик — бронирование и доставка</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <h1>Рестик</h1>
+        <nav>
+          <a href="#menu">Меню</a>
+          <a href="#booking">Бронь</a>
+          <a href="#delivery">Доставка</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h2>Вкусная еда с доставкой и удобной бронью</h2>
+          <p>Выберите блюда, закажите домой или забронируйте столик за 1 минуту.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#delivery">Заказать доставку</a>
+            <a class="btn btn-secondary" href="#booking">Забронировать стол</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="menu" class="section container">
+        <h3>Меню</h3>
+        <p class="subtitle">Отметьте нужные блюда для доставки:</p>
+        <div class="menu-grid" id="menuList"></div>
+      </section>
+
+      <section id="booking" class="section section-alt">
+        <div class="container">
+          <h3>Бронирование столика</h3>
+          <form id="bookingForm" class="card form-grid">
+            <label>
+              Имя
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              Телефон
+              <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required />
+            </label>
+            <label>
+              Дата
+              <input type="date" name="date" required />
+            </label>
+            <label>
+              Время
+              <input type="time" name="time" required />
+            </label>
+            <label>
+              Количество гостей
+              <input type="number" name="guests" min="1" max="20" value="2" required />
+            </label>
+            <label>
+              Комментарий
+              <input type="text" name="comment" placeholder="Например, у окна" />
+            </label>
+            <button class="btn" type="submit">Подтвердить бронь</button>
+          </form>
+          <p id="bookingMessage" class="message"></p>
+        </div>
+      </section>
+
+      <section id="delivery" class="section container">
+        <h3>Заказ доставки</h3>
+        <form id="deliveryForm" class="card form-grid">
+          <label>
+            Имя
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            Телефон
+            <input type="tel" name="phone" required />
+          </label>
+          <label class="full-width">
+            Адрес доставки
+            <input type="text" name="address" required />
+          </label>
+          <label class="full-width">
+            Комментарий к заказу
+            <input type="text" name="comment" placeholder="Без лука, домофон 42 и т.д." />
+          </label>
+          <div class="full-width total-box">
+            <span>Сумма заказа:</span>
+            <strong id="totalPrice">0 ₽</strong>
+          </div>
+          <button class="btn full-width" type="submit">Оформить заказ</button>
+        </form>
+        <p id="deliveryMessage" class="message"></p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>Рестик • Ежедневно с 10:00 до 23:00 • +7 (900) 123-45-67</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
